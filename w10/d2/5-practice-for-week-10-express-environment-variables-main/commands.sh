@@ -14,5 +14,6 @@ NODE_ENV="production" node index.js
 # Part 2
 # Run server after loading dotenv into `app.js`: `require('dotenv').config()`
 node app.js
+
 # Navigate to localhost:5000 to see secret message
 # Should see "Hello from .env"
