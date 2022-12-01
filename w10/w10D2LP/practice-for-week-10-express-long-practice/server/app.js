@@ -2,9 +2,21 @@ const express = require('express');
 require('express-async-errors');
 const app = express();
 
+const DATA_SOURCE = 'app.db';
+
+const sqlite =  require('sqlite3')
+const db = new sqlite.Database(
+    DATA_SOURCE,
+    sqlite.OPEN_READWRITE
+)
+
 app.use(express.static('assets'))
 app.use(express.json())
 
+app.get('server/routes/trees.js', (req, res, next) => {
+  const sql = 'SELECT id, name FROM trees
+  ORDER BY '
+})
 
 app.use('/', (req,res) => {
   console.log(`Method: ${req.method}`);
